@@ -1,0 +1,80 @@
+{% extends "base_main.html" %}
+
+{% block head %}
+{% load static %}
+<script type="text/javascript">
+	$(function() {$("#tabs").tabs();});
+	
+	
+	// make functions available after the document is loaded
+	$(document).ready(function() {
+		
+		{% for result in result_lst %}
+			// add sort functions
+			$("table#table_{{forloop.counter}}").tablesorter();
+			
+			// Table to CSV file
+			$("#export_table_{{forloop.counter}}").click(
+				function (event) {
+					var outputFile = window.prompt("Please input the name of output csv file ?") || 'export_table';
+					outputFile = outputFile.replace('.csv','') + '.csv';
+					export_table_csv.apply(this, [$('#{{forloop.counter}} > table'), outputFile]);
+				}
+			);
+		{% endfor %}
+	});
+</script>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+	<div id="tabs">
+	
+		<ul>
+		{% for result in result_lst %}
+			<li><a href="#{{forloop.counter}}">{{result.0}}</a></li>
+		{% endfor %}
+		</ul>
+		
+		{% for result in result_lst %}
+		
+		<div id="{{forloop.counter}}">
+			<table id="table_{{forloop.counter}}" class="tablesorter">
+				<thead>
+				<tr>
+					<th title="">ID</th>
+					{% for v in result.1.columns %}
+						<th title="">{{v}}</th>
+					{% endfor %}
+				</tr>
+				</thead>
+				
+				<tbody>
+					{% for ID, arr in result.1.iterrows %}
+					<tr>
+						<td>{{ID}}</td>
+						
+						{% for v in arr %}
+						<td>{{v}}</td>
+						{% endfor %}
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			
+			<div class='button' align="left">
+				<a role="button" id="export_table_{{forloop.counter}}" title="Download the HTML table to excel CSV.">
+					Download
+				</a>
+			</div>
+		
+		</div>
+		
+		{% endfor %}
+		
+	</div>
+</div>
+
+{% endblock %}

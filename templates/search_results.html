@@ -1,0 +1,57 @@
+{% extends "base_main.html" %}
+
+{% block head %}
+{% load static %}
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var i, inputs = document.getElementsByTagName("input");
+		
+		for(i=0; i<inputs.length; i++)
+		{
+			if(inputs[i].getAttribute('type')=='radio')
+			{
+				inputs[i].checked = true;
+				break;
+			}
+		}
+	})
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+	<form>
+		{% csrf_token %}
+		<p>The platform ranks all logFC values by their absolute values and selects the top fraction for analysis because showing too many entries will make the browser unresponsive.</p>
+		<label style="display: inline-block;">Max number of entries to analyze ordered by the adjusted value</label>
+		<input type="number" name="max_count" title="maximum number of entries to show in the result table" min="10" max="100000" step="1" value="{{max_count}}" style="width:10em;display: inline-block;">
+		
+		<br>
+		<p>You searched for: <b>"{{query}}"</b>. Please select one to continue.</p>
+		
+		{% if signal_lst %}
+			<b>Signal Molecules</b>
+			<br>
+			{% for signal in signal_lst %}
+				<input type="radio" name="select" value="signal_{{signal.ID}}"> {{signal.ID}}
+				<br>
+			{% endfor %}
+		{% endif %}
+		
+		{% if gene_lst %}
+			<b>Target Genes</b><br>
+			{% for gene in gene_lst %}
+				<input type="radio" name="select" value="gene_{{gene.Symbol}}"> {{gene.Symbol}}
+				<br>
+			{% endfor %}
+		{% endif %}
+	
+		<p><input class="button" type="submit"></p><br>
+	
+	</form>	
+</div>
+{% endblock %}

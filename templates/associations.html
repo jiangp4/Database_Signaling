@@ -1,0 +1,353 @@
+{% extends "base_main.html" %}
+
+{% block head %}
+
+{% load static %}
+<script src="{% static 'js/math.min.js' %}"></script>
+<script src="{% static 'js/wilcoxon_signed_rank_test.js' %}"></script>
+
+<script type="text/javascript">
+
+	// make functions available after the document is loaded
+	$(document).ready(function() {
+		
+		// add sort functions
+		$("table#table_main").tablesorter({
+			
+			//'resizable', 
+			widgets: ['stickyHeaders', 'filter'],
+			
+			widgetOptions: {
+				//resizable: true,
+				//resizable_addLastColumn: true,
+				stickyHeaders_attachTo : '.scrollTable',
+				
+				filter_columnFilters : true,
+				filter_hideFilters : true,
+				filter_ignoreCase : true,
+				filter_liveSearch : true,
+				filter_searchFiltered: true,
+				filter_startsWith : false,
+				},
+			
+			//headers: sorter_map,
+		});
+				
+		// Table to CSV file
+		$("#export_table_data").click(
+			function (event) {
+				var outputFile = window.prompt("Please input the name of output csv file ?") || 'export_table';
+				outputFile = outputFile.replace('.csv','') + '.csv';
+				export_table_csv.apply(this, [$('#table_data > table'), outputFile]);
+			}
+		);
+		
+		$("#export_analysis_result").click(
+				function (event) {
+					var outputFile = window.prompt("Please input the name of output csv file ?") || 'export_analysis';
+					outputFile = outputFile.replace('.csv','') + '.csv';
+					export_table_csv.apply(this, [$('#analysis_result > table'), outputFile]);
+				}
+			);
+	});
+	
+	
+	function significant_value_groups()
+	{
+		var index_signal = null, index_gene = null, index_value = null,
+			group_map = {}, precision=3, mean, std, count_threshold, pvalue_threshold;
+		
+		count_threshold = document.getElementById("count_threshold").value;
+		pvalue_threshold = document.getElementById("pvalue_threshold").value;
+		
+		{% if float_precision %}
+			precision = {{float_precision}};
+		{% endif %}
+		
+		$("#table_main thead tr th").each(function(i){
+			var value = $(this).text();
+			
+			if (value == "Signal"){
+				index_signal = i;
+			
+			}else if(value == "Gene"){
+				index_gene = i;
+				
+			}else if(value == "Value.adj"){
+				index_value = i;
+			}
+		});
+		
+		$("#table_main tbody tr").each(function(i){
+			var ptr = $(this), key;
+			
+			// jump filtered rows
+			if(ptr.attr('class') == 'filtered') return true;
+			
+			ptr = ptr.children();
+			
+		{% if target == 'Signal' %}
+			key = ptr[index_signal].innerText;
+		{% else %}
+			key = ptr[index_gene].innerText;
+		{% endif %}
+		
+			if (!group_map[key]) group_map[key] = [];
+			
+			group_map[key].push(parseFloat(ptr[index_value].innerText));
+		});
+		
+		// clear up any previous content
+		$('#table_analysis tbody').html("");
+		$('#table_analysis').trigger('destroy');
+		
+		for (const [key, lst] of Object.entries(group_map))
+		{
+			if(lst.length >= count_threshold)
+			{
+				mean = math.mean(lst);
+				std = math.std(lst);
+				
+				if(math.max(lst) == 0 && math.min(lst) == 0){
+					p = 1;
+				}else{
+					p = wilcoxon(lst)['P'];
+				}
+				
+				if(p <= pvalue_threshold)
+				{
+					$("table#table_analysis tbody").append(
+							'<tr>' + 
+							'<td>' + key + '</td>' +
+							'<td>' + mean.toPrecision(precision) + '</td>' +
+							'<td>' + std.toPrecision(precision) + '</td>' +
+							'<td>' + p.toPrecision(precision) + '</td>' +
+							'</tr>'
+							);
+					
+						
+				}
+			}
+		}
+		
+		// add sort functions
+		$("table#table_analysis").tablesorter();
+		
+		popup_window('analysis_result', 'open');
+	}
+	
+	
+	function filter_table_rows()
+	{
+		var correlation_filter = document.getElementById("correlation_filter");
+		
+		
+		$("#table_main tbody tr").each(function(i){
+			var ptr = $(this);
+			
+			if(ptr.attr('name') == 'False')
+			{
+				if(correlation_filter.checked){
+					ptr.addClass('filtered');
+				}else{
+					ptr.removeClass('filtered');
+				}
+			}
+		});
+	}
+	
+</script>
+
+
+
+<style>
+
+/* Autocomplete selection */
+.scrollTable {
+	position: relative;
+	height: {% if associations|length > 50 %}90vh{% else %}auto{% endif %};
+	overflow-y: auto;
+}
+
+
+.roundbox {
+	border-radius: 10px;
+	border: 2px solid #73AD21;
+	padding: 5px 10px;
+	width: auto;
+	height: auto;
+}
+
+/* Minimum table cell width */
+td:before {
+	content: '';
+	display: block;
+	width: 5em;
+}
+
+/* Table column filter */
+.tablesorter .filtered {
+	display: none;
+}
+
+
+/* hidden filter row */
+.tablesorter-filter-row.hideme td {
+	/* thickness of the closed filter row (height = padding x 2) */
+	padding: 5px;
+	margin: 0;
+	line-height: 0;
+	cursor: pointer;
+}
+
+.tablesorter-filter-row.hideme * {
+	height: 1px;
+	min-height: 0;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	
+	/* don't use visibility: hidden because it disables tabbing */
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+<form class="form-inline">
+	{% csrf_token %}
+	
+	<fieldset>
+		<div class='button' align="left">
+			<a role="button" onclick="significant_value_groups()" title="get signal-to-target groups with significant values.">
+				Analyze
+			</a>
+		</div>	
+		<div class="vr">&nbsp;</div>
+		
+		<label>Thresholds</label>
+		<div class="vr">&nbsp;</div>
+		
+		<label>minimum count</label>
+		<input type="number" id="count_threshold" title="minimum number of entries for statistical analysis" min="3" max="100" step="1" value="3" style="width:10em;">
+		
+		<div class="vr">&nbsp;</div>
+		
+		<label>p-value</label>
+		<input type="number" id="pvalue_threshold" title="pvalue threshold for result" min="0" max="1" step="1e-5" value="0.05" style="width:10em;">
+	</fieldset>	
+		
+	<p>The function above can identify signals or target genes that are differentially regulated upon treatments by the Wilcoxon signed-rank test. Please input the analysis thresholds above for a minimum number of entries (<b>minimum count</b>) in each group and <b>p-value</b> cutoff for the result report.</p>
+
+</form>	
+
+							
+<div id="analysis_result" class="modal">
+	<div class="modal-content">
+		<span id="close_analysis_result" class="close" onclick="popup_window('analysis_result', 'close')">&times;</span>
+		
+		<div id="analysis_result">
+			<table id="table_analysis" class="tablesorter">
+				<thead>
+				<tr>
+					<th title="">ID</th>
+					<th title="Average value">Mean</th>
+					<th title="Standard deviation">Std</th>
+					<th title="Wilcoxon signed rank test p-value">p-value</th>
+				</tr>
+				</thead>
+				
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="slot-item only-SI large-2 columns">
+			<div class='button' align="left">
+				<a role="button" id="export_analysis_result" title="Download the analysis result to excel CSV.">
+					Download
+				</a>
+			</div>
+		</div>
+				
+	</div>
+</div>
+						 
+<!-------------------------------------------------------------------------------------------------->
+<!-- Table data -->
+
+<!-- fieldset>
+	<label title="quality flag based on gene-to-target correlation in TCGA data">Correlation filter</label>
+	<div class="vr">&nbsp;</div>
+	<input type="checkbox" id="correlation_filter" title="quality flag based on gene-to-target correlation in TCGA data" onclick="filter_table_rows()">
+</fieldset -->
+
+<div id="table_data" class="scrollTable">
+	<table id="table_main" class="tablesorter">
+		<thead>
+		<tr>
+			{% if target == 'Signal' %}
+				<th title="treatment signal">Signal</th>
+			{% endif %}
+			
+			<th title="additional detail of treatment">Signal Detail</th>
+			<th title="treatment condition">Condition</th>
+			<th title="dataset ID">Dataset</th>
+			<th title="profiling platform">Platform</th>
+			<th title="additional detail of platform">Detail</th>
+			
+			{% if target == 'Gene' %}
+				<th title="target gene">Gene</th>
+			{% endif %}
+			
+			<th title="log2 fold change upon signal treatment">Value</th>
+			<th title="adjust value by unified standard deviation">Value.adj</th>
+			<th title="quality flag based on whether the gene-to-target correlation in TCGA & GTEx data is high">High Quality</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+			{% for association in associations %}
+			<tr>
+				{% if target == 'Signal' %}
+					<td>{{association.treatment.signal}}</td>
+				{% endif %}
+				
+				<td>{{association.treatment.signal_detail}}</td>
+				<td>{{association.treatment.condition}}</td>
+				<td>{{association.treatment.dataset}}</td>
+				<td>{{association.treatment.platform}}</td>
+				<td>{{association.treatment.platform_detail}}</td>
+				
+				{% if target == 'Gene' %}
+					<td>{{association.gene}}</td>
+				{% endif %}
+				<td>{{association.value}}</td>
+				<td>{{association.value_adj}}</td>
+				<td>{{association.treatment.flag_correlation}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+<br>
+
+<div class="slot-item only-SI large-2 columns">
+	<div class='button' align="left">
+		<a role="button" id="export_table_data" title="Download the HTML table to excel CSV.">
+			Download
+		</a>
+	</div>
+</div>
+
+<br><br>
+
+</div>
+{% endblock %}

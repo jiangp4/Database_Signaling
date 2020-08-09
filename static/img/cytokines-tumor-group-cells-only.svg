@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="452px" height="429px" viewBox="0 0 452 429" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>cytokines-tumor-group-cells-only</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#363E62" stop-opacity="0.984101836" offset="0%"></stop>
+            <stop stop-color="#191D33" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="229.471409%" id="linearGradient-2">
+            <stop stop-color="#363E62" stop-opacity="0.984101836" offset="0%"></stop>
+            <stop stop-color="#191D33" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-3" cx="31.8545455" cy="31.8545455" r="31.8545455"></circle>
+        <filter x="-4.7%" y="-4.7%" width="109.4%" height="109.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="shadowSpreadInner1"></feMorphology>
+            <feGaussianBlur stdDeviation="1.5" in="shadowSpreadInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <radialGradient cx="58.0060992%" cy="-12.8060408%" fx="58.0060992%" fy="-12.8060408%" r="186.554671%" gradientTransform="translate(0.580061,-0.128060),scale(1.000000,0.947368),rotate(74.471666),translate(-0.580061,0.128060)" id="radialGradient-5">
+            <stop stop-color="#22B6D6" offset="0%"></stop>
+            <stop stop-color="#22B6D6" stop-opacity="0.701486014" offset="42.3669764%"></stop>
+            <stop stop-color="#22B6D6" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="-6.10668444%" y1="-37.1054293%" x2="147.027545%" y2="150.305489%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <path d="M17.4545455,34.9090909 C26.1304368,34.9090909 33.1636364,28.0960711 33.1636364,19.6917852 C33.1636364,11.2874994 28.9033537,1.74545455 17.4545455,1.74545455 C6.00573725,1.74545455 1.74545455,11.2874994 1.74545455,19.6917852 C1.74545455,28.0960711 8.77865411,34.9090909 17.4545455,34.9090909 Z" id="path-7"></path>
+        <filter x="-33.4%" y="-31.7%" width="166.8%" height="163.3%" filterUnits="objectBoundingBox" id="filter-8">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0853911713 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-9" cx="31.8545455" cy="31.8545455" r="31.8545455"></circle>
+        <filter x="-4.7%" y="-4.7%" width="109.4%" height="109.4%" filterUnits="objectBoundingBox" id="filter-10">
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="shadowSpreadInner1"></feMorphology>
+            <feGaussianBlur stdDeviation="1.5" in="shadowSpreadInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <path d="M17.4545455,34.9090909 C26.1304368,34.9090909 33.1636364,28.0960711 33.1636364,19.6917852 C33.1636364,11.2874994 28.9033537,1.74545455 17.4545455,1.74545455 C6.00573725,1.74545455 1.74545455,11.2874994 1.74545455,19.6917852 C1.74545455,28.0960711 8.77865411,34.9090909 17.4545455,34.9090909 Z" id="path-11"></path>
+        <filter x="-33.4%" y="-31.7%" width="166.8%" height="163.3%" filterUnits="objectBoundingBox" id="filter-12">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0853911713 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-13">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-14">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-15">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.9%" y="-21.9%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-16">
+            <feGaussianBlur stdDeviation="1.26097297" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.9%" y="-21.9%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-17">
+            <feGaussianBlur stdDeviation="1.26097297" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.9%" y="-21.9%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-18">
+            <feGaussianBlur stdDeviation="1.26097297" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.9%" y="-21.9%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-19">
+            <feGaussianBlur stdDeviation="1.26097297" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-21.9%" y="-21.9%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-20">
+            <feGaussianBlur stdDeviation="1.26097297" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-21">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-22">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-23">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-24">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-25">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-14.6%" y="-14.6%" width="129.2%" height="129.2%" filterUnits="objectBoundingBox" id="filter-26">
+            <feGaussianBlur stdDeviation="0.840648649" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ctyotkines-/-Group-/-cytokines-tumor-group-cells-only" transform="translate(1.000000, -9.000000)">
+            <g id="cytokines-tumor-group-cells-only" transform="translate(0.000000, 1.000000)">
+                <g id="Cell-/-Blue" transform="translate(337.000000, 400.000000) rotate(158.000000) translate(-337.000000, -400.000000) translate(295.000000, 358.000000)">
+                    <g id="graphic-cell-blue" transform="translate(8.727273, 8.727273)">
+                        <circle id="cell-border-copy" fill="#22B6D6" cx="33.6" cy="33.6" r="33.6"></circle>
+                        <g id="Group-2" transform="translate(1.745455, 1.745455)">
+                            <g id="cell-border">
+                                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                            </g>
+                            <g id="Group" transform="translate(13.963636, 19.200000)">
+                                <g id="Oval">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                                    <use fill="url(#radialGradient-5)" fill-rule="evenodd" xlink:href="#path-7"></use>
+                                    <use fill-opacity="0.2" fill="url(#linearGradient-6)" fill-rule="evenodd" style="mix-blend-mode: overlay;" xlink:href="#path-7"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Cell-/-Blue" transform="translate(207.000000, 44.000000) rotate(272.000000) translate(-207.000000, -44.000000) translate(165.000000, 2.000000)">
+                    <g id="graphic-cell-blue" transform="translate(8.727273, 8.727273)">
+                        <circle id="cell-border-copy" fill="#22B6D6" cx="33.6" cy="33.6" r="33.6"></circle>
+                        <g id="Group-2" transform="translate(1.745455, 1.745455)">
+                            <g id="cell-border">
+                                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-9"></use>
+                                <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-9"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                            </g>
+                            <g id="Group" transform="translate(13.963636, 19.200000)">
+                                <g id="Oval">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                                    <use fill="url(#radialGradient-5)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                                    <use fill-opacity="0.2" fill="url(#linearGradient-6)" fill-rule="evenodd" style="mix-blend-mode: overlay;" xlink:href="#path-11"></use>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Ctyokines-/-Group/-cytokines-group" transform="translate(0.000000, 8.000000)">
+                    <g id="cytokines-group">
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-orange" transform="translate(88.000000, 281.000000)" fill="#FF6D1D">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Orange-Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-orange-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-13)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-orange" transform="translate(116.000000, 194.000000)" fill="#FF6D1D">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Orange-Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-orange-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-14)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-orange" transform="translate(96.000000, 58.000000)" fill="#FF6D1D">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Orange-Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-orange-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-15)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-green" transform="translate(391.000000, 316.000000)" fill="#8BB843">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Green--Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-green-solid" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-16)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-green" transform="translate(199.000000, 330.000000)" fill="#8BB843">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Green--Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-green-solid" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-17)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-green" transform="translate(149.000000, 39.000000)" fill="#8BB843">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Green--Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-green-solid" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-18)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-green" transform="translate(0.000000, 172.000000)" fill="#8BB843">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Green--Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-green-solid" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-19)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-green" transform="translate(230.000000, 74.000000)" fill="#8BB843">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Green--Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-green-solid" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-20)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-purple" transform="translate(153.000000, 0.000000)" fill="#8169A4">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Purple-Solid" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-red-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-21)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-purple" transform="translate(85.000000, 314.000000)" fill="#8169A4">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Purple-Solid" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-red-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-22)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-blue" transform="translate(123.000000, 84.000000)" fill="#22B6D6">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Blue--Blur-Copy-2" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-blue-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-23)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-blue" transform="translate(353.000000, 296.000000)" fill="#22B6D6">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Blue--Blur-Copy-2" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-blue-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-24)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-yellow" transform="translate(255.000000, 360.000000)">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Blue--Blur-Copy-3" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-yellow-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" fill="#FFEAAA" filter="url(#filter-25)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill="#E8CB73" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Ctyokines/-Single-Cytokine-/-cytokine-orange" transform="translate(429.000000, 407.000000)" fill="#FF6D1D">
+                            <g id="Cell-/-Mini-Blurred-Cell-/-Orange-Blur-Copy" transform="translate(2.357143, 2.357143)">
+                                <g id="graphic-cytokine-orange-blur" transform="translate(-1.111479, -1.111479)">
+                                    <rect id="Rectangle" filter="url(#filter-26)" x="1.11147854" y="1.11147854" width="17.2857143" height="17.2857143" rx="7.776"></rect>
+                                    <path d="M9.75433568,0.644297075 C4.72300029,0.644297075 0.644297075,4.72300029 0.644297075,9.75433568 C0.644297075,14.7856711 4.72300029,18.8643743 9.75433568,18.8643743 C14.7856711,18.8643743 18.8643743,14.7856711 18.8643743,9.75433568 C18.8643743,4.72300029 14.7856711,0.644297075 9.75433568,0.644297075 Z M9.75433568,1.57866001 C14.2696367,1.57866001 17.9300114,5.23903469 17.9300114,9.75433568 C17.9300114,14.2696367 14.2696367,17.9300114 9.75433568,17.9300114 C5.23903469,17.9300114 1.57866001,14.2696367 1.57866001,9.75433568 C1.57866001,5.23903469 5.23903469,1.57866001 9.75433568,1.57866001 Z" id="Rectangle-Copy" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

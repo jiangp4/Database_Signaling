@@ -1,0 +1,42 @@
+{% extends "base_main.html" %}
+
+{% block head %}
+{% load static %}
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	// auto-complete signal names
+	{% if signals %}
+	var source = [];
+	
+		{% for v in signals %}
+			source.push("{{v}}")
+		{% endfor %}
+		
+	$("#mainSrcInput").autocomplete({source: source});
+	{% endif %}
+})
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+	<form class="center" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+		<fieldset id="mainSrch">
+		<br>
+		<p>In the search module, you can query either a cell <b>signal molecule</b> (e.g., <i>TGFB</i>) or a <b>target gene</b> (e.g., <i>SOX4</i>). With a cell signal molecule as the input, the platform will report the log2 fold change (logFC) of target genes upon treatments from that signal in all collected studies. Please use the auto-complete function in the input box for available signal names. With a target gene as the input, the platform will report the logFC upon the treatment of all cell signals.</p>
+		<br><br>
+		<input id ="mainSrcInput" type="text" autocomplete="on" name="query_input" placeholder="something like TGFB or SOX4" style="font-size: 16px; font-weight: bold;">
+		<br>
+		<p><input value="Search" class="button" type="submit" autocomplete="off" style="height: 30px; width: 100px; font-size: 16px; font-weight: bold;"></p><br>
+		</fieldset>        
+    </form>
+</div>
+<br>
+
+{% endblock %}
