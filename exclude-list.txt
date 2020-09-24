@@ -3,3 +3,4 @@ admin
 log
 migrations
 *.pyc
+sql
