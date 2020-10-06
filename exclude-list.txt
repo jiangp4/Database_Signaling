@@ -4,3 +4,4 @@ log
 migrations
 *.pyc
 sql
+venv36
