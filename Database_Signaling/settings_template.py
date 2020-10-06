@@ -122,9 +122,6 @@ else:
                 },
         }
     }
-    
-    DEBUG = False
-
 
 
 # Password validation
