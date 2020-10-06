@@ -33,7 +33,7 @@ NRAND = 1000
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '--*dhc1&5$=khzfgx08#91k_8e)bmhj2)-wlouf&k3jb8(lfe9'
+SECRET_KEY = 'XXX'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
