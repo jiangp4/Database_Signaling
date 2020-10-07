@@ -31,7 +31,17 @@ def task_run(request, pk):
     signature = pandas.read_csv(os.path.join(data_path, 'diff.centroid'), sep='\t')
     
     try:
-        response = pandas.read_csv(f, sep='\t', index_col=0)
+        file_type = f.split('.').pop().lower()
+        
+        if file_type == 'csv':
+            response = pandas.read_csv(f, index_col=0)
+        
+        elif file_type in ['xls', 'xlsx']:
+            response = pandas.read_excel(f, index_col=0)
+        
+        else:
+            response = pandas.read_csv(f, sep='\t', index_col=0)
+    
     except:
         task_upload.delete()
         os.remove(f)
@@ -43,6 +53,17 @@ def task_run(request, pk):
         os.remove(f)
         
         return render(request, 'error.html', {'message': 'Number of samples %d exceeds allowance %d. Please download our software to run locally.' % (response.shape[1], MAX_SAMPLE_COUNT)})
+    
+    
+    # Input quality check
+    if response.isnull().sum().sum() > 0:
+        task_upload.delete()
+        os.remove(f)
+        
+        return render(request, 'error.html', {'message': 'Null values detected in the input. Please do missing value imputation first.'})
+    
+    if response.index.value_counts().max() > 1:
+        response = response.groupby(response.index).median()
     
     try:
         beta, se, zscore, pvalue = ridge_significance_test(signature, response, RIDGE_ALPHA, "two-sided", NRAND)

@@ -5,3 +5,4 @@ migrations
 *.pyc
 sql
 venv36
+data
