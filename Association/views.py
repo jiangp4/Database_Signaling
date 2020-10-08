@@ -69,6 +69,21 @@ def search(request):
         signal_lst = search_signal(query)
         gene_lst = search_gene(query)
         
+        # still possible for empty signal by no data collected
+        if signal_lst is not None:
+            lst = []
+            
+            for signal in signal_lst:
+                # only include signals with some associations
+                associations = Association.objects.filter(treatment__signal=signal)
+                if associations.count() > 0: lst.append(signal)
+            
+            if len(lst) > 0:
+                signal_lst = lst
+            else:
+                signal_lst = None
+        
+        
         if signal_lst is None and gene_lst is None:
             return render(request, 'error.html',
                           {'message': 'Cannot find any results with your query %s.' % query, 'GOBACK': 5})
