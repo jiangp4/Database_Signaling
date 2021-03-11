@@ -99,9 +99,7 @@ function print_mail_to_link(prefix, postfix)
 												</a>
 											</div>
 										</li>
-										{% endif %}
 										
-
 										<li class="nav-item lvl-1 item-4">
 											<div class="nav-item-title">
 												<a href="/download/" class={% if "/download/" in request.path %}"active"{% else %}""{% endif %}>
@@ -109,6 +107,7 @@ function print_mail_to_link(prefix, postfix)
 												</a>
 											</div>
 										</li>
+										{% endif %}
 										
 										<li class="nav-item lvl-1 item-5">
 											<div class="nav-item-title">
