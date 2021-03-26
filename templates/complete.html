@@ -4,9 +4,16 @@
 {% load static %}
 
 <div class="row">
-	<h2>Successful user information change of {{user.get_username}}.</h2>
+	<h2>{{title}}</h2>
+	<p>{{description}}</p>
+	
+	<div class="large-3 columns">
 	<img src="{% static 'img/tuzki_awesome.gif' %}" />
-	<br><br>
+	</div>
+	
+	<br>
 </div>
+
+<br>
 
 {% endblock %}
