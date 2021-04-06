@@ -11,6 +11,6 @@ def file_size(value):
 class TaskUpload(models.Model):
     #title = models.CharField('title', max_length=MAX_STR_LENGTH)
     task_file = models.FileField('task_file', upload_to='upload/', validators=[file_size])
-        
+    
     def __unicode__(self): return "%s" % self.task_file
     def __str__(self): return self.__unicode__()
