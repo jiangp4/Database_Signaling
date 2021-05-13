@@ -36,8 +36,8 @@ admin.site.register(Signal, SignalAdmin)
 
 class TreatmentAdmin(admin.ModelAdmin):
     ordering = ('ID',)
-    list_display = ['ID', 'signal', 'signal_detail', 'condition', 'dataset', 'platform', 'platform_detail', 'flag_correlation']
-    search_fields = ('ID', 'signal', 'signal_detail', 'condition', 'dataset', 'platform', 'platform_detail', 'flag_correlation')
+    list_display = ['ID', 'signal', 'condition', 'duration', 'dose', 'dataset', 'platform', 'platform_detail', 'flag_correlation']
+    search_fields = ('ID', 'signal', 'condition', 'duration', 'dose', 'dataset', 'platform', 'platform_detail', 'flag_correlation')
 
 admin.site.register(Treatment, TreatmentAdmin)
 

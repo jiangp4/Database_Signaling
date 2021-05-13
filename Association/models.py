@@ -33,9 +33,14 @@ class Treatment(models.Model):
     ID = models.CharField(max_length=MAX_CHAR_LENGTH, primary_key=True)
     
     signal = models.ForeignKey(Signal, related_name='association', on_delete=models.CASCADE)
-    signal_detail = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
+    
+    #signal_detail = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
     
     condition = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
+    
+    duration = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
+    dose = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
+    
     dataset = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
     platform = models.CharField(max_length=MAX_CHAR_LENGTH, default='')
     platform_detail = models.CharField(max_length=MAX_CHAR_LENGTH, default='')

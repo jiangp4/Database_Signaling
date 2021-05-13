@@ -35,9 +35,16 @@ class Command(BaseCommand):
         
         included = set()
         
+        info_map = os.path.join(Immune_Path, 'Signaling', 'Output', 'diff.merge.info')
+        info_map = pandas.read_csv(info_map, sep='\t', index_col=0)
+        
+        # nan values should be jump empty strings
+        info_map.fillna('', inplace=True)
+        
         # use gene map to reduce MySQL communications
         gene_map = {}
         
+        # 
         for signal_type in ['Cytokine', 'Chemokine', 'Growth_Factor', 'Inhibitory']:
             print('processing', signal_type)
             
@@ -52,21 +59,16 @@ class Command(BaseCommand):
             count = 0
             
             for ID in data.columns:
-                
                 print('%.2f' % (100.0 * count / data.shape[1]), '%')
                 count += 1
                 
-                fields = ID.split('@')
+                if ID not in info_map.index:
+                    sys.stderr.write('Cannot find meta information for %s\n' % ID)
+                    continue
                 
-                signal = signal_detail = condition = dataset = ''
+                signal, condition, duration, dose = info_map.loc[ID]
                 
-                if len(fields) == 3:
-                    signal, condition, dataset = fields
-                elif len(fields) == 2:
-                    signal, dataset = fields
-                
-                if signal.find('&') > 0:
-                    signal, signal_detail = signal.split('&')
+                dataset = ID.split('@')[-1]
                 
                 # jump duplications
                 if signal_type == 'Growth_Factor' and signal in ['TGFB1', 'TGFB2', 'TGFB3']: continue
@@ -91,8 +93,9 @@ class Command(BaseCommand):
                     rc_treatment = Treatment.objects.create(
                         ID=ID,
                         signal=signal,
-                        signal_detail=signal_detail,
                         condition = condition,
+                        duration=duration,
+                        dose=dose,
                         dataset=dataset,
                         platform=platform,
                         platform_detail=platform_detail
@@ -165,12 +168,13 @@ class Command(BaseCommand):
         for signal_type in ['Cytokine', 'Chemokine', 'Growth_Factor', 'Inhibitory']:
             log = os.path.join(Immune_Path, signal_type, 'log', 'Receptor_' + signal_type + '.xlsx')
             
-            xls = pandas.ExcelFile(log)
+            xls = pandas.ExcelFile(log, engine='openpyxl')
             for family in xls.sheet_names:
                 data = xls.parse(family, index_col=0)['Gene']
+                data = data.loc[~data.index.isnull()]
                 
                 for ID, lst in data.iteritems():
-                    if len(lst) == 0: continue
+                    if lst is None or len(lst) == 0: continue
                     
                     rc_signal = Signal.objects.filter(ID=ID)
             
@@ -200,7 +204,7 @@ class Command(BaseCommand):
     def insert_gene(self):
         cnt_genes = cnt_alias = cnt_previous = 0
         
-        gene_info = os.path.join(os.getenv("HOME"), 'workspace', 'Data', 'GeneInfo', 'NCBI', 'gene_info.human')
+        gene_info = os.path.join(os.getenv("HOME"), 'workspace', 'Data', 'GeneInfo', 'NCBI', 'gene_info.9606')
         
         fin = open(gene_info)
         

@@ -296,8 +296,11 @@ td:before {
 				<th title="treatment signal">Signal</th>
 			{% endif %}
 			
-			<th title="additional detail of treatment">Signal Detail</th>
 			<th title="treatment condition">Condition</th>
+			
+			<th title="treatment duration">Duration</th>
+			<th title="treatment dose">Dose</th>
+			
 			<th title="dataset ID">Dataset</th>
 			<th title="profiling platform">Platform</th>
 			<th title="additional detail of platform">Detail</th>
@@ -319,8 +322,9 @@ td:before {
 					<td>{{association.treatment.signal}}</td>
 				{% endif %}
 				
-				<td>{{association.treatment.signal_detail}}</td>
 				<td>{{association.treatment.condition}}</td>
+				<td>{{association.treatment.duration}}</td>
+				<td>{{association.treatment.dose}}</td>
 				<td>{{association.treatment.dataset}}</td>
 				<td>{{association.treatment.platform}}</td>
 				<td>{{association.treatment.platform_detail}}</td>
