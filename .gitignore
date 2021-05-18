@@ -6,7 +6,8 @@ settings.py
 scans_results.txt
 push_test_server
 exclude-list.txt
-#data
-#recover_tables.sh
-#create_database
-#clear_database
+data
+dump
+recover_tables.sh
+create_database
+clear_database
