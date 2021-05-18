@@ -1,4 +1,7 @@
 *~
 *.pyc
 settings.py
-sql
+#data
+#recover_tables.sh
+#create_database
+#clear_database
