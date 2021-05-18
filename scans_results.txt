@@ -1,9 +1,0 @@
-1, jQuery version >= 3.5.0
-2, name settings.py as settings-template.py tracked by git, but with blank host/server names and username/password
-3, sqldump files needs its independent github
-4, login form autocomplete="off"
-5, cookie not marked as secure, change with the following
-   SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-   SECURE_SSL_REDIRECT = True
-   SESSION_COOKIE_SECURE = True
-   CSRF_COOKIE_SECURE = True
