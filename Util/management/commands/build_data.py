@@ -151,12 +151,21 @@ class Command(BaseCommand):
     
 
     def insert_correlation(self):
-        included = os.path.join(os.getenv("HOME"), 'workspace', 'Data', 'Cancer', 'Immune', 'Signaling', 'Output', 'diff.merge.filter.gz')
+        Immune_Path = os.path.join(os.getenv("HOME"), 'workspace', 'Data', 'Cancer', 'Immune')
+        
+        included = os.path.join(Immune_Path, 'Signaling', 'Output', 'diff.merge.filter.gz')
         included = pandas.read_csv(included, sep='\t', index_col=0).columns
         
+        info_map = os.path.join(Immune_Path, 'Signaling', 'Output', 'diff.merge.info')
+        info_map = pandas.read_csv(info_map, sep='\t', index_col=0)
+        
         Treatment.objects.all().update(flag_correlation=False)
-            
+    
         for ID in included:
+            if ID not in info_map.index:
+                sys.stderr.write('Cannot find meta information for %s\n' % ID)
+                continue
+            
             rc_treatment = Treatment.objects.get(ID=ID)
             rc_treatment.flag_correlation = True
             rc_treatment.save()
