@@ -202,6 +202,7 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # cookie security
 if not DEBUG:
