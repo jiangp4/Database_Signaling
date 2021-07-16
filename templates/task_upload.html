@@ -9,6 +9,7 @@
 {% block content %}
 
 <div class="row">
+{% if request.user.is_authenticated %}
 	<form method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		<p>Please upload a matrix file with columns as samples and rows as genes. The platform will predict the activities of signaling molecules in our collection.</p>
@@ -20,6 +21,10 @@
 		{{ form.as_p }}
 		<button type="submit">Submit</button>
 	</form>
+
+{% else %}
+	<p>Please login first.</p>
+{% endif %}
 </div>
 
 {% endblock %}

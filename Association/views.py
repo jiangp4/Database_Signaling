@@ -38,6 +38,9 @@ def search_signal(signal):
 
 # Create your views here.
 def search(request):
+    if not request.user.is_authenticated:
+        return render(request, 'error.html', {'message': 'User not login.'})
+    
     query = select_signal = select_gene = None
     
     format_string = '%.' + str(FLOAT_PRECISION) + 'f'
