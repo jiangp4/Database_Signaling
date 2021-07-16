@@ -116,9 +116,18 @@ function print_mail_to_link(prefix, postfix)
 												</a>
 											</div>
 										</li>
+										
 										{% endif %}
 										
 										<li class="nav-item lvl-1 item-5">
+											<div class="nav-item-title">
+												<a href="/help/" class={% if "/help/" in request.path %}"active"{% else %}""{% endif %}>
+													Help
+												</a>
+											</div>
+										</li>
+										
+										<li class="nav-item lvl-1 item-6">
 											<div class="nav-item-title">
 												<a href="/contact/" class={% if request.path == "/contact/" %}"active"{% else %}""{% endif %}>
 													Contact

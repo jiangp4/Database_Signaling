@@ -36,5 +36,8 @@ def index(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def help_index(request):
+    return render(request, 'help.html')
+
 def download(request):
     return render(request, 'download.html')

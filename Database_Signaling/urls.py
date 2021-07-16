@@ -30,9 +30,10 @@ urlpatterns = [
     path('profiler/', include('Profiler.urls')),
     
     path('download/', views.download, name='download'),
-    path('contact/', views.contact, name='contact'),
-    
     path('download/<path:f>/', views.send_file, name='send_file'),
+    
+    path('help/', views.help_index, name='help'),
+    path('contact/', views.contact, name='contact'),
     
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico')),
 ]
