@@ -10,24 +10,28 @@
 
 <div class="row">
 
-<h2>CytoSig prediction model</h2>
-<a href="https://github.com/data2intelligence/CytoSig" target="_blank">Download from Github</a>
-<br><br>
-Prerequisite package: <a href="https://github.com/data2intelligence/ridge_significance" target="_blank">ridge_significance</a>
-<br><br>
-
-<h2>Human cytokine response data</h2>
-<a href="https://hpc.nih.gov/~Jiang_Lab/CytoSig/diff.merge.gz" target="_blank">data matrix of cytokine treatment response</a>: Each column represents a cytokine treatment experiment on a cell model under certain conditions. Each row represents a target gene. Each value is a log2 fold change between treatment and control conditions.
-
-<br><br>
-
-<a href="https://hpc.nih.gov/~Jiang_Lab/CytoSig/diff.merge.info" target="_blank">meta information of each treatment profile</a>: Each column represents an experimental condition. Each row represents a profile ID used as column names in the data matrix above.
-<br><br>
-
-<a href="https://github.com/data2intelligence/CytoSig_data_filter" target="_blank">source code to filter response profiles</a>: When building the CytoSig model, a critical issue is to filter cytokine treatment response profiles that are relevant to human physiological conditions. Here is the source code to compute quality measures as correlation between cytokine ligand or receptor expression and target gene expression.
-<br><br>
-
-</div>
-<br>
+{% if request.user.is_authenticated %}
+	<h2>CytoSig prediction model</h2>
+	<a href="https://github.com/data2intelligence/CytoSig" target="_blank">Download from Github</a>
+	<br><br>
+	Prerequisite package: <a href="https://github.com/data2intelligence/ridge_significance" target="_blank">ridge_significance</a>
+	<br><br>
+	
+	<h2>Human cytokine response data</h2>
+	<a href="https://hpc.nih.gov/~Jiang_Lab/CytoSig/diff.merge.gz" target="_blank">data matrix of cytokine treatment response</a>: Each column represents a cytokine treatment experiment on a cell model under certain conditions. Each row represents a target gene. Each value is a log2 fold change between treatment and control conditions.
+	
+	<br><br>
+	
+	<a href="https://hpc.nih.gov/~Jiang_Lab/CytoSig/diff.merge.info" target="_blank">meta information of each treatment profile</a>: Each column represents an experimental condition. Each row represents a profile ID used as column names in the data matrix above.
+	<br><br>
+	
+	<a href="https://github.com/data2intelligence/CytoSig_data_filter" target="_blank">source code to filter response profiles</a>: When building the CytoSig model, a critical issue is to filter cytokine treatment response profiles that are relevant to human physiological conditions. Here is the source code to compute quality measures as correlation between cytokine ligand or receptor expression and target gene expression.
+	<br><br>
+	
+	</div>
+	<br>
+{% else %}
+	<p>Please login first.</p>
+{% endif %}
 
 {% endblock %}
