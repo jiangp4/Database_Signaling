@@ -29,7 +29,7 @@ $(document).ready(function() {
 	{% csrf_token %}
 		<fieldset id="mainSrch">
 		<br>
-		<p>In the search module, you can query either a cell <b>signal molecule</b> (e.g., <i>TGFB</i>) or a <b>target gene</b> (e.g., <i>SOX4</i>). With a cell signal molecule as the input, the platform will report the log2 fold change (logFC) of target genes upon treatments from that signal in all collected studies. Please use the auto-complete function in the input box for available signal names. With a target gene as the input, the platform will report the logFC upon the treatment of all cell signals.</p>
+		<p>In the search module, you can query either a cell <b>signal molecule</b> (e.g., <i>TGFB</i> or <i>BMP6</i>) or a <b>target gene</b> (e.g., <i>SERPINB9</i> or <i>IL8</i>). With a cell signal molecule as the input, the platform will report the log2 fold change (logFC) of target genes upon treatments from that signal in all collected studies. Please use the auto-complete function in the input box for available signal names. With a target gene as the input, the platform will report the logFC upon the treatment of all cell signals.</p>
 		<br><br>
 		<input id ="mainSrcInput" type="text" autocomplete="on" name="query_input" placeholder="something like TGFB or SOX4" style="font-size: 16px; font-weight: bold;">
 		<br>
